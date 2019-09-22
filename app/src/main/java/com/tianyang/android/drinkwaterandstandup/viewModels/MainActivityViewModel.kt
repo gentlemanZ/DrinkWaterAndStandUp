@@ -1,0 +1,3 @@
+package com.tianyang.android.drinkwaterandstandup.viewModels
+
+class MainActivityViewModel
