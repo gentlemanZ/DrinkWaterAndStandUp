@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData
 
 class MainActivityViewModel {
     val helloWorldLiveData: MutableLiveData<String> by lazy {
-        MutableLiveData()
+        MutableLiveData<String>()
     }
 
     init {
