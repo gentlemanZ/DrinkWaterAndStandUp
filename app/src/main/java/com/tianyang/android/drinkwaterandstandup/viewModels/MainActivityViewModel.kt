@@ -1,6 +1,7 @@
 package com.tianyang.android.drinkwaterandstandup.viewModels
 
 import android.arch.lifecycle.MutableLiveData
+import com.tianyang.android.drinkwaterandstandup.util.CountDownTimerUtil
 
 class MainActivityViewModel {
     val helloWorldLiveData: MutableLiveData<String> by lazy {
@@ -8,6 +9,6 @@ class MainActivityViewModel {
     }
 
     init {
-        helloWorldLiveData.postValue("hello world")
+        CountDownTimerUtil.startCountDownTimer(helloWorldLiveData)
     }
 }
