@@ -1,6 +1,6 @@
 package com.tianyang.android.drinkwaterandstandup.viewModels
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.tianyang.android.drinkwaterandstandup.util.CountDownTimerUtil
 
 class MainActivityViewModel {

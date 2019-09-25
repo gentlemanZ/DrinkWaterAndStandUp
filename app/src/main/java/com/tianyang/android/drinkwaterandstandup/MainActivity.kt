@@ -1,8 +1,8 @@
 package com.tianyang.android.drinkwaterandstandup
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.tianyang.android.drinkwaterandstandup.databinding.ActivityMainBinding
 import com.tianyang.android.drinkwaterandstandup.viewModels.MainActivityViewModel
 

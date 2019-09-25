@@ -1,7 +1,7 @@
 package com.tianyang.android.drinkwaterandstandup.util
 
-import android.arch.lifecycle.MutableLiveData
 import android.os.CountDownTimer
+import androidx.lifecycle.MutableLiveData
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
