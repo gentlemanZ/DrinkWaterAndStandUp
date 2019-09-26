@@ -9,6 +9,6 @@ class MainActivityViewModel {
     }
 
     init {
-        CountDownTimerUtil.startCountDownTimer(helloWorldLiveData)
+        CountDownTimerUtil.startCountDownTimer(helloWorldLiveData, 30)
     }
 }

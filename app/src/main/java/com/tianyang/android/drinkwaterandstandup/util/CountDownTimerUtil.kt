@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 object CountDownTimerUtil {
     val formatter: DateFormat = SimpleDateFormat("HH:mm:ss", Locale.US)
@@ -12,8 +13,15 @@ object CountDownTimerUtil {
     init {
         formatter.timeZone = TimeZone.getTimeZone("UTC")
     }
-    fun startCountDownTimer(timerLiveData: MutableLiveData<String>) {
-        object : CountDownTimer(300000, 1000) {
+
+    fun startCountDownTimer(
+        timerLiveData: MutableLiveData<String>,
+        secondLeftOnCountDownTimer: Long
+    ) {
+        object : CountDownTimer(
+            TimeUnit.SECONDS.toMillis(secondLeftOnCountDownTimer),
+            TimeUnit.SECONDS.toMillis(1L)
+        ) {
             override fun onTick(millisUntilFinished: Long) {
                 val textContent: String = formatter.format(Date(millisUntilFinished))
                 timerLiveData.postValue(textContent)
