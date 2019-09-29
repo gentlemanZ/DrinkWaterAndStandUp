@@ -1,19 +1,18 @@
 package com.tianyang.android.drinkwaterandstandup
 
-import android.databinding.DataBindingUtil
+import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import com.tianyang.android.drinkwaterandstandup.databinding.ActivityMainBinding
-import com.tianyang.android.drinkwaterandstandup.viewModels.MainActivityViewModel
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentTimeConfig.OnFragmentInteractionListener,
+    FragmentTimer.OnFragmentInteractionListener {
+    override fun onFragmentInteraction(uri: Uri) {
+        //Do nothing for now.
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val binding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.viewModel = MainActivityViewModel()
-        binding.lifecycleOwner = this
+        supportActionBar?.hide()
     }
 }
