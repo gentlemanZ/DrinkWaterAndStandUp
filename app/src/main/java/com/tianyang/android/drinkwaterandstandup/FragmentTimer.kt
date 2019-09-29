@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.tianyang.android.drinkwaterandstandup.databinding.FragmentTimerBinding
+import com.tianyang.android.drinkwaterandstandup.viewModels.FragmentTimerViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +27,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragmentTimer : Fragment() {
     // TODO: Rename and change types of parameters
+    private var viewModel: FragmentTimerViewModel? = null
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
@@ -40,7 +45,22 @@ class FragmentTimer : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_timer, container, false)
+        val binding: FragmentTimerBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_timer,
+            container,
+            false
+        )
+        val view: View = binding.root
+        binding.lifecycleOwner = this
+        viewModel = FragmentTimerViewModel()
+        binding.viewModel = viewModel
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel?.navController = view.findNavController()
     }
 
     // TODO: Rename method, update argument and hook method into UI event
