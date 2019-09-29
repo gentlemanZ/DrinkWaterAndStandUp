@@ -4,7 +4,8 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity(), FragmentTimeConfig.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), FragmentTimeConfig.OnFragmentInteractionListener,
+    FragmentTimer.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
         //Do nothing for now.
     }
@@ -13,9 +14,5 @@ class MainActivity : AppCompatActivity(), FragmentTimeConfig.OnFragmentInteracti
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
-//        val binding: ActivityMainBinding =
-//            DataBindingUtil.setContentView(this, R.layout.activity_main)
-//        binding.viewModel = MainActivityViewModel()
-//        binding.lifecycleOwner = this
     }
 }

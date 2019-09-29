@@ -3,11 +3,20 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/nav_graph"
-        app:startDestination="@id/timer_config">
+        app:startDestination="@id/fragment_timer_config">
 
     <fragment
-            android:id="@+id/timer_config"
+            android:id="@+id/fragment_timer_config"
             android:name="com.tianyang.android.drinkwaterandstandup.FragmentTimeConfig"
             android:label="fragment_timer_config"
-            tools:layout="@layout/fragment_timer_config" />
+            tools:layout="@layout/fragment_timer_config">
+        <action
+                android:id="@+id/action_timer_config_to_timer"
+                app:destination="@id/fragment_timer" />
+    </fragment>
+    <fragment
+            android:id="@+id/fragment_timer"
+            android:name="com.tianyang.android.drinkwaterandstandup.FragmentTimer"
+            android:label="fragment_timer"
+            tools:layout="@layout/fragment_timer" />
 </navigation>
