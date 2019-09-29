@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.tianyang.android.drinkwaterandstandup.databinding.FragmentTimerConfigBinding
 import com.tianyang.android.drinkwaterandstandup.viewModels.FragmentTimerConfigViewModel
 
@@ -26,6 +27,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragmentTimeConfig : Fragment() {
     // TODO: Rename and change types of parameters
+    private var viewModel: FragmentTimerConfigViewModel? = null
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
@@ -51,8 +53,14 @@ class FragmentTimeConfig : Fragment() {
         )
         val view: View = binding.root
         binding.lifecycleOwner = this
-        binding.viewModel = FragmentTimerConfigViewModel()
+        viewModel = FragmentTimerConfigViewModel()
+        binding.viewModel = viewModel
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel?.navController = view.findNavController()
     }
 
     // TODO: Rename method, update argument and hook method into UI event
