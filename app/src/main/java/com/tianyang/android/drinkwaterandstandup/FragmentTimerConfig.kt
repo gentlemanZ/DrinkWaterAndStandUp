@@ -20,12 +20,12 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [FragmentTimeConfig.OnFragmentInteractionListener] interface
+ * [FragmentTimerConfig.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [FragmentTimeConfig.newInstance] factory method to
+ * Use the [FragmentTimerConfig.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentTimeConfig : Fragment() {
+class FragmentTimerConfig : Fragment() {
     // TODO: Rename and change types of parameters
     private var viewModel: FragmentTimerConfigViewModel? = null
     private var param1: String? = null
@@ -105,12 +105,12 @@ class FragmentTimeConfig : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentTimeConfig.
+         * @return A new instance of fragment FragmentTimerConfig.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmentTimeConfig().apply {
+            FragmentTimerConfig().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

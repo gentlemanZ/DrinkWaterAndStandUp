@@ -4,7 +4,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity(), FragmentTimeConfig.OnFragmentInteractionListener,
+class MainActivity : AppCompatActivity(), FragmentTimerConfig.OnFragmentInteractionListener,
     FragmentTimer.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
         //Do nothing for now.

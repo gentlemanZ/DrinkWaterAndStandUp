@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.tianyang.android.drinkwaterandstandup.databinding.FragmentTimerBinding
 import com.tianyang.android.drinkwaterandstandup.viewModels.FragmentTimerViewModel
 
@@ -26,6 +27,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentTimer : Fragment() {
+    val args: FragmentTimerArgs by navArgs()
     // TODO: Rename and change types of parameters
     private var viewModel: FragmentTimerViewModel? = null
     private var param1: String? = null
@@ -61,6 +63,7 @@ class FragmentTimer : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel?.navController = view.findNavController()
+        viewModel?.startCountDownTimer(args.timetocountdown)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
