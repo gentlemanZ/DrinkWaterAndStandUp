@@ -11,8 +11,8 @@ class FragmentTimerViewModel {
         MutableLiveData<String>()
     }
 
-    init {
-        CountDownTimerUtil.startCountDownTimer(helloWorldLiveData, 300)
+    fun startCountDownTimer(second: Long) {
+        CountDownTimerUtil.startCountDownTimer(helloWorldLiveData, second)
     }
 
 }
